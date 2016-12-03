@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <body>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+    <script src="dhotson-springy-559a400/springy.js"></script>
+    <script src="dhotson-springy-559a400/springyui.js"></script>
+    <script src="func_got.js"/>
+    </head>
+    
+    <script>
+var graph = new Springy.Graph();
+
+graph.addNodes(name, gender, culture,born,aliases);
+
+
+graph.addEdges(
+  [name, gender, {color: '#00A0B0', label: 'Gender'}],
+  [name, culture, {color: '#00A0B0', label:'Culture'}],
+  [name, born, {color: '#00A0B0', label:'Born'}],
+  [name, aliases, {color: '#00A0B0', label:"Well Known As"}]
+  
+//  ['Michael', 'Jessica', {color: '#CC333F'}],
+//  ['Jessica', 'Barbara', {color: '#EB6841'}],
+//  ['Michael', 'Timothy', {color: '#EDC951'}],
+//  ['Amphitryon', 'Alcmene', {color: '#7DBE3C'}],
+//  ['Alcmene', 'Amphitryon', {color: '#BE7D3C'}],
+//  ['Amphitryon', 'Iphicles'],
+//  ['Amphitryon', 'Heracles'],
+//  ['Barbara', 'Timothy', {color: '#6A4A3C'}]
+//);
+
+jQuery(function(){
+  var springy = jQuery('#springydemo').springy({
+    graph: graph
+  });
+});
+</script>
+
+
+<canvas id="springydemo" width="800" height="800" back/>
+
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "game_of_thrones_search_engine",
+  "version": "1.0.0",
+  "description": "got",
+  "main": "func_got.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "valar",
+    "morghulis"
+  ],
+  "author": "rrishav",
+  "license": "MIT"
+}
