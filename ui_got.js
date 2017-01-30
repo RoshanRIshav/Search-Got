@@ -1,45 +1,44 @@
-
-
+const readline = require('readline-sync');
 var asoaif = require('asoiaf-api');
 
-var char = "Jon Snow"
+var input;
 
 var name, gender, culture, born, played_by,aliases;
 
+var obj;
 
 
 
-//User interface
 
-const readline = require('readline-sync');
+
+
 
 function userInpWhat(inp){
     if (inp == "Valar Doharis"){
-        console.log("Welcome");
+        console.log("Welcome"); 
+        searchq();
         
     }
+    
     else{
-        console.log("Kostilus ȳdragon isse Valyrīha");
+        console.log("Kostilus ȳdragon isse Valyrīha\n Eng: Please enter correct greatings in Valyrian");
     }
 }
 
+function searchq (){
+    var inp = readline.question("What Would You like to know about?")
+    input = (""+inp);
+    obj = asoaif.getCharacterByName(input);
+    name = obj[0].name;
+    gender = obj[0].gender;
+    culture = obj[0].culture;
+    born = obj[0].born;
+    played_by = obj[0].playedBy[0];
+    aliases = obj[0].aliases[1];
+    clog();
+}
 
-var input1 = readline.question("Valar Morghulis");
 
-
-userInpWhat(input1)
-
-
-
-//function node_maker (char){
-var obj = asoaif.getCharacterByName(char);
-
-name = obj[0].name;
-gender = obj[0].gender;
-culture = obj[0].culture;
-born = obj[0].born;
-played_by = obj[0].playedBy[0];
-aliases = obj[0].aliases[1];
 
 function clog (){
     
@@ -101,6 +100,8 @@ else{
     
 }
 
-clog();
 
 
+
+var input1 = readline.question("Valar Morghulis");
+userInpWhat(input1)
